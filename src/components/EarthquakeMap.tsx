@@ -33,7 +33,9 @@ const EarthquakeMap = () => {
   }, []);
 
   return (
-    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+    <LoadScript
+      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+    >
       <GoogleMap mapContainerStyle={style} center={center} zoom={1}>
         {earthquakeData.map((earthquake: any, index: number) => (
           <Marker
